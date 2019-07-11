@@ -1,0 +1,21 @@
+<form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>
+      Title
+      <br>
+      <input type="text" formControlName="title">
+    </label>
+  </div>
+  <div *ngIf="blogForm.get('title').invalid && blogForm.get('title').touched" style="color: red">
+    Title is required and min length is 10
+  </div>
+  <div >
+    <label>
+      <h3>Completed</h3>
+      <br>
+      <input type="radio" formControlName="completed"   value="TRUE"  >True
+      <input type="radio" formControlName="completed"     value="False"  >False
+    </label>
+  </div>
+  <button type="submit">Edit</button>
+</form>

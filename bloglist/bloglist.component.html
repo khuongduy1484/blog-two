@@ -1,0 +1,25 @@
+<h3>Blog</h3>
+<table class="table" border="2">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">TITTLE</th>
+    <th scope="col">Completed</th>
+    <th scope="col">EDIT</th>
+    <th scope="col">Delete</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr  *ngFor="let blog of blogs  | async" style="width: 300px;">
+    <td >{{blog.id}} </td>
+    <td>{{blog.title}} </td>
+    <td>{{blog.completed}} </td>
+    <td>
+      <button><a [routerLink]="['/blog', blog.id, 'edit']">Edit</a></button></td>
+    <td><button (click)="deleteBlog(blog.id)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
+
