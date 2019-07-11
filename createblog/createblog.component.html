@@ -3,7 +3,7 @@
     <label>
       Create Blog
       <br>
-      <input type="text" formControlName="title">
+      <input type="text" formControlName="title" class="form-control">
     </label>
   </div>
   <div *ngIf="blogForm.get('title').invalid && blogForm.get('title').touched" style="color: red">
@@ -17,5 +17,5 @@
       <input type="radio" formControlName="completed"     value="False"  >False
     </label>
   </div>
-  <button type="submit">ADD</button>
+  <button type="submit" class="btn btn-success">ADD</button>
 </form>
