@@ -12,8 +12,6 @@ import {Routes} from '@angular/router';
 export class BloglistComponent implements OnInit, OnDestroy {
   blogs: Observable<Blog[]>;
   subscription: Subscription;
-  router: Routes;
-
   constructor(private blogService: BlogService) {
 
   }
